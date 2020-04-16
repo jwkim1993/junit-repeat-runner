@@ -2,7 +2,9 @@ package com.naver.test;
 
 import com.naver.annotation.Repeat;
 import com.naver.common.RepeatRunner;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -33,6 +35,16 @@ public class MyTestClass {
     public void testMyCode10Times() {
         System.out.println("Test my code 10 times...");
         testMyCodeOnce();
+    }
+
+    @Before
+    public void beforeTest() {
+        System.out.println("This is beforeTest function...");
+    }
+
+    @After
+    public void afterTest() {
+        System.out.println("This is afterTest function...");
     }
 
 }
