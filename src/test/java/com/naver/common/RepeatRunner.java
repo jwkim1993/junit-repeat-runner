@@ -25,12 +25,12 @@ public class RepeatRunner extends BlockJUnit4ClassRunner {
             Statement statement = new Statement() {
                 @Override
                 public void evaluate() throws Throwable {
-                    int count = getCount(method);
-                    for(int i = 0 ; i < count ; ++i)
-                        methodBlock(method).evaluate();
+                    methodBlock(method).evaluate();
                 }
             };
-            runLeaf(statement, desc, notifier);
+            int count = getCount(method);
+            for(int i = 0 ; i < count ; ++i)
+                runLeaf(statement, desc, notifier);
         }
     }
 

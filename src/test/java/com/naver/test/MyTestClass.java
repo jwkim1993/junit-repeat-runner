@@ -19,8 +19,9 @@ public class MyTestClass {
         Random random = new Random();
         int a = random.nextInt(100);
         int b = random.nextInt(100);
+        int n = random.nextInt(2) - 1;
 
-        Assert.assertEquals(calc.calcTwoNumbers(a, b), a+b);
+        Assert.assertEquals(a+b+n, calc.calcTwoNumbers(a, b));
     }
 
     @Test
