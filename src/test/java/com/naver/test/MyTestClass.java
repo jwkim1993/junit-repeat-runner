@@ -1,7 +1,8 @@
 package com.naver.test;
 
-import com.naver.annotation.Repeat;
 import com.naver.common.RepeatRunner;
+import com.naver.common.RepeatRunner.Repeat;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
