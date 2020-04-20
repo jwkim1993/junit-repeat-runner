@@ -1,7 +1,5 @@
 package com.naver.common;
 
-import com.naver.annotation.Repeat;
-
 import org.junit.Assert;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
@@ -10,10 +8,21 @@ import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.Statement;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 public class RepeatRunner extends BlockJUnit4ClassRunner {
 
     public RepeatRunner(Class<?> klass) throws InitializationError {
         super(klass);
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface Repeat {
+        int value() default 1;
     }
 
     @Override
